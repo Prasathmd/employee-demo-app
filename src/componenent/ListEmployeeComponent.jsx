@@ -24,6 +24,11 @@ const ListEmployeeComponent = () => {
         navigate("/createEmployee");
       }
 
+      function editUpdateEmployee(id){
+        console.log("edit and updarte Employee id="+id);
+        navigate(`/createEmployee/${id}`);
+      }
+
     return(
         <div className="container bg-white text-dark" >  
             <h1>Employee List</h1>
@@ -35,6 +40,8 @@ const ListEmployeeComponent = () => {
                         <td>Employee First Name</td>
                         <td>Employee Last Name</td>
                         <td>Employee Email Id</td>
+                        <td>Edit</td>
+                        <td>Delete</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,6 +53,8 @@ const ListEmployeeComponent = () => {
                                 <td>{employee.firstName}</td>
                                 <td>{employee.lastName}</td>
                                 <td>{employee.email}</td>
+                                <td><button onClick={() => editUpdateEmployee(employee.id)}>Edit</button> </td>
+                                <td><button >Delete</button> </td>
                             </tr>
                         )
                     }

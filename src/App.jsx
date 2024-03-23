@@ -15,13 +15,15 @@ function App() {
       <BrowserRouter>
         <HeaderComponent/>
         <Routes>
-          {/* comment line */}
-          {/* //http://localhost:port/ */}
+          
           <Route path='/' element={<ListEmployeeComponent />}></Route>
-          {/* http://localhost:port/employees */}
+          
           <Route path='/employees' element={<ListEmployeeComponent />} errorElement={<ErrorComponent/>} ></Route>
-          {/* http://localhost:port/createEmployee */}
+          
           <Route path='/createEmployee' element={<CreateEmployee/>}></Route>
+
+          <Route path='/createEmployee/:id' element={<CreateEmployee/>}></Route>
+
         </Routes>
         <Footer/>
       </BrowserRouter>
